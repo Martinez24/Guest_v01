@@ -32,6 +32,9 @@ import { AuthService } from "./services/auth.service";
 //Rutas
 import { AppRoutingModule } from "./app-routing-module";
 
+//guards
+import { AuthGuard } from "./guards/auth.guard";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,8 @@ import { AppRoutingModule } from "./app-routing-module";
   ],
   providers: [
     ProductService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
