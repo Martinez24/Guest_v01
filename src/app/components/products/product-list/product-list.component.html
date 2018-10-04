@@ -1,16 +1,20 @@
 <div class="card mt-5">
   <div class="card-body">
-    <h6 class="text-center">List of products</h6>
+    <h4 class="text-center">Lista de productos</h4>
     <table class="table table-sm table-hover table table-bordered table-dark">
       <tbody>
-
+        <td class="text-center"><tr><b>Nombre del producto</b></tr></td>
+        <td class="text-center"><tr><b>Categoría</b></tr></td>
+        <td class="text-center"><tr><b>Imagen</b></tr></td>
+        <td class="text-center"><tr><b>Precio</b></tr></td>
+        <td class="text-center"  ><tr><b>Opciones</b></tr></td>
         <tr *ngFor="let product of productList">
         <td>{{ product.name }}</td>
         <td>{{ product.category }}</td>
         <td>{{ product.location }}</td>
         <td>{{product.price }}</td>
         <td><a class="btn btn-outline-primary text-white" (click)="onEdit(product)"><i class="fa fa-edit">
-        </i>Edit</a>
+        </i>Editar</a>
         <a href="" class="btn btn-outline-danger text-white" (click)="onDelete(product.$key)">
           <i class="fa fa-trash"></i>
         </a>

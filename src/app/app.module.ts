@@ -24,6 +24,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { PrivadoPageComponent } from './components/privado-page/privado-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { CartaPageComponent } from "./components/carta-page/carta-page.component";
 
 //Servicios
 import { ProductService } from "./services/product.service";
@@ -34,6 +35,11 @@ import { AppRoutingModule } from "./app-routing-module";
 
 //guards
 import { AuthGuard } from "./guards/auth.guard";
+//Flash messages
+import { FlashMessagesModule } from "angular2-flash-messages";
+import { FlashMessagesService } from "angular2-flash-messages";
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +52,8 @@ import { AuthGuard } from "./guards/auth.guard";
     RegisterPageComponent,
     LoginPageComponent,
     PrivadoPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CartaPageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,12 +63,14 @@ import { AuthGuard } from "./guards/auth.guard";
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlashMessagesModule
   ],
   providers: [
     ProductService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })

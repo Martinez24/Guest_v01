@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src="./assets/imgs/Logoblanco.png" class="center" height="40px" width="55px" alt=""></a>
+  <a class="navbar-brand" ><img src="./assets/imgs/Logoblanco.png" class="center" height="40px" width="55px" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,15 +7,36 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active" *ngIf="isLogin">
-        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" *ngIf="!isLogin">
         <a class="nav-link" href="#" routerLink="login">Login</a>
       </li>
       <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" href="#" routerLink="register">Registro</a>
+        <a class="nav-link" href="#" routerLink="register">Administración de usuarios</a>
       </li>
-      <li class="nav-item" *ngIf="isLogin">
+      <!-- <li class="nav-item dropdown" *ngIf="isLogin">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración de páginas</a>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(10px, 60px, 10px);">
+        <a class="dropdown-item" href="#">Historia</a>
+        <a class="dropdown-item" href="#">Reservaciones</a>
+        <a class="dropdown-item" href="#" routerLink="carta">Carta móvil</a>
+        </div>
+      </li> -->
+      <li class="nav-item dropdown" *ngIf="isLogin">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Administración de páginas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" routerLink="carta">Carta Móvil</a>
+          <a class="dropdown-item" href="#">Eventos</a>
+          <a class="dropdown-item" href="#">Historia</a>
+          <a class="dropdown-item" href="#">Historial</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Reservaciones</a>
+        </div>
+      </li>
+      <li style="right: 1400px;" class="nav-item" *ngIf="isLogin">
         <a class="nav-link" (click)="onClickLogout()" href="#">Logout</a>
       </li>
     </ul>
